@@ -102,15 +102,9 @@
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line import/no-unresolved
-import SearchBox from '@SearchBox';
-
 export default {
   name: 'HeaderDesktop',
-
-  components: {
-    SearchBox,
-  },
+  // Do not import `@SearchBox
 };
 </script>
 

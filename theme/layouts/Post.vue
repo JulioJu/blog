@@ -83,6 +83,7 @@
 import { getDateInEnglish } from '../utils/date.vue';
 
 export default {
+  // Do not import `@Disqus`
   methods: {
     getDate(date: string): string {
       return getDateInEnglish(date);

@@ -117,15 +117,9 @@
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line import/no-unresolved
-import SearchBox from '@SearchBox';
-
 export default {
   name: 'HeaderMobile',
-
-  components: {
-    SearchBox,
-  },
+  // Do not import `@SearchBox
 };
 </script>
 

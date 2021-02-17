@@ -54,6 +54,16 @@ disappear for the current `yarn dev` instance. When we restart a new
 **_You could create vue file with only TypeScript elements_**, like into
 ./theme/utils/date.vue
 
+- Do not import VuePress plugin in the section script of the component otherwise we have error like
+  `[tsl] ERROR in /home/julioju/Blog/theme/components/HeaderDesktop.vue.ts(106,23) TS2307: Cannot find module '@SearchBox' or its corresponding type declarations. `
+  - Simply use the component tag `SearchBox` into the Template
+  - **_Do not use_**
+    ```ts
+    components: {
+    SearchBox,
+    },
+    ```
+
 ## scss
 
 :warning:
