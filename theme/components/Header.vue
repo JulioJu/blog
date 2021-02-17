@@ -16,7 +16,7 @@ export default {
     HeaderDesktop,
     HeaderMobile,
   },
-  mounted() {
+  mounted(): void {
     displayScrolledHeader();
     switchHeaderDesktopHeaderMobile();
   },
@@ -34,7 +34,7 @@ export default {
  * Throw an error
  * @param {string} message the message of the error
  */
-const throwError = (message) => {
+const throwError = (message: string): void => {
   // eslint-disable-next-line no-alert
   alert(message);
   throw new Error(message);
@@ -51,7 +51,7 @@ const throwError = (message) => {
  */
 // See above why we disale this eslint rules
 // eslint-disable-next-line max-lines-per-function, max-statements
-const displayScrolledHeader = () => {
+const displayScrolledHeader = (): void => {
   const [header] = document.getElementsByTagName('header');
   if (!header) {
     const message = 'No tag element "header"';
@@ -63,7 +63,7 @@ const displayScrolledHeader = () => {
   /*
    * Set value of scrollMenuOffset
    */
-  const setScrollMenuOffset = () => {
+  const setScrollMenuOffset = (): number => {
     const paddingTopMainTag = 12;
     const scrollMenuOffsetDesktop = paddingTopMainTag * baseFontSize;
     const scrollMenuOffsetMobile = 100;
@@ -82,7 +82,7 @@ const displayScrolledHeader = () => {
    * Set Add or remove css class 'header--scrollstate' to header tag
    * if window.scrollY > scrollMenuOffset
    */
-  const testDisplayScrollMenu = (scrollMenuOffsetVar) => {
+  const testDisplayScrollMenu = (scrollMenuOffsetVar: number): void => {
     if (window.scrollY > scrollMenuOffsetVar) {
       header.classList.add('header--scrollstate');
     } else {
@@ -101,7 +101,7 @@ const displayScrolledHeader = () => {
  * Script to display menu mobile when we click on the button with three
  * horizontals lines
  */
-const switchHeaderDesktopHeaderMobile = () => {
+const switchHeaderDesktopHeaderMobile = (): void => {
   const menuBtn = document.getElementById('header-mobile-threebarbutton');
   const menuMobile = document.getElementById('header-mobile-navmenu');
   const [body] = document.getElementsByTagName('body');
@@ -112,9 +112,7 @@ const switchHeaderDesktopHeaderMobile = () => {
       body.classList.toggle('menuMobileIsDisplayed');
     });
   } else {
-    // eslint-disable-next-line
     const message =
-      // eslint-disable-next-line
       'No element with id "header-mobile-threebarbutton" ' +
       ' and / or "header-mobile-navmenu"';
     throwError(message);

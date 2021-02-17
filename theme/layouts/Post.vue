@@ -80,11 +80,11 @@
 </template>
 
 <script lang="ts">
-import { getDateInEnglish } from '../utils/date';
+import { getDateInEnglish } from '../utils/date.vue';
 
 export default {
   methods: {
-    getDate(date) {
+    getDate(date: string): string {
       return getDateInEnglish(date);
     },
   },

@@ -38,25 +38,25 @@ export default {
       required: true,
     },
   },
-  data() {
+  data(): { currentPage: number } {
     return {
       currentPage: 1,
     };
   },
-  mounted() {
+  mounted(): void {
     // Is undefined when HTML is rendered
     if (this.pagination._currentPage) {
       this.currentPage = this.getCurrentPage(this.pagination._currentPage.path);
     }
   },
-  updated() {
+  updated(): void {
     // Is undefined when HTML is rendered
     if (this.pagination._currentPage) {
       this.currentPage = this.getCurrentPage(this.pagination._currentPage.path);
     }
   },
   methods: {
-    getCurrentPage(currentPagePath) {
+    getCurrentPage(currentPagePath: string): number {
       if (currentPagePath !== '/') {
         return Number(currentPagePath.substring(6, currentPagePath.length - 1));
       }

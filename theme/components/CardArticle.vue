@@ -40,7 +40,7 @@
   </article>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'CardArticle',
   props: {
@@ -52,7 +52,7 @@ export default {
 
   methods: {
     // eslint-disable-next-line
-    shrinkTitleBlogIndex(aPage) {
+    shrinkTitleBlogIndex(aPage: any): string {
       const titleMaxLength = 50;
       let text = `${aPage.title}`;
       if (text.length > titleMaxLength) {
